@@ -1,10 +1,16 @@
 package Tut1.Vehicle;
 
 public class Car extends Vehicle{
-    public Car(String name, double width, double height, double length, double weight, int seatingCapacity) {
-        super(name, width, height, length, weight, seatingCapacity);
+    private final static int max_Car_Registration_Number_Length = 8;
+
+    public Car(String name, double width, double height, double length, double weight, int seatingCapacity, String registrationNumber) {
+        super(name, width, height, length, weight, seatingCapacity, registrationNumber);
     }
 
+    @Override
+    public boolean validateRegistrationNumber(String registrationNumber) {
+        return registrationNumber.length() < max_Car_Registration_Number_Length;
+    }
 
     @Override
     public boolean validateWeight(double weight) {

@@ -1,26 +1,30 @@
 package Tut1.Vehicle;
 
 public class Vehicle {
-    protected String name;
-    protected double width;
-    protected double height;
-    protected double length;
-    protected double weight;
-    protected int seatingCapacity;
+    private String name;
+    private double width;
+    private double height;
+    private double length;
+    private double weight;
+    private int seatingCapacity;
+    private String registrationNumber;
 
-    public Vehicle(String name, double width, double height, double length, double weight, int seatingCapacity) {
+
+    public Vehicle(String name, double width, double height, double length, double weight, int seatingCapacity, String registrationNumber) {
         if (validateName(name)
                 & validateWidth(width)
                 & validateHeight(height)
                 & validateLength(length)
                 & validateWeight(weight)
-                & validateSeatCapacity(seatingCapacity)) {
+                & validateSeatCapacity(seatingCapacity)
+                & validateRegistrationNumber(registrationNumber)) {
             this.name = name;
             this.width = width;
             this.height = height;
             this.length = length;
             this.weight = weight;
             this.seatingCapacity = seatingCapacity;
+            this.registrationNumber = registrationNumber;
         }
     }
 
@@ -97,14 +101,20 @@ public class Vehicle {
         return name.length() < 100;
     }
 
+    public boolean validateRegistrationNumber(String registrationNumber) {
+        return registrationNumber.length() < 12;
+    }
+
+    @Override
     public String toString() {
-        return this.getClass().getSimpleName() + "{" +
+        return this.getClass().getSimpleName() + " {" +
                 "name='" + name + '\'' +
                 ", width=" + width +
                 ", height=" + height +
                 ", length=" + length +
                 ", weight=" + weight +
                 ", seatingCapacity=" + seatingCapacity +
+                ", registrationNumber='" + registrationNumber + '\'' +
                 '}';
     }
 }

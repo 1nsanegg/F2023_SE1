@@ -1,8 +1,15 @@
 package Tut1.Vehicle;
 
 public class Bus extends Vehicle{
-    public Bus(String name, double width, double height, double length, double weight, int seatingCapacity) {
-        super(name, width, height, length, weight, seatingCapacity);
+    private final static int max_Registration_Number_Length = 7;
+
+    public Bus(String name, double width, double height, double length, double weight, int seatingCapacity, String registrationNumber) {
+        super(name, width, height, length, weight, seatingCapacity, registrationNumber);
+    }
+
+    @Override
+    public boolean validateRegistrationNumber(String registrationNumber) {
+        return registrationNumber.length() < max_Registration_Number_Length;
     }
 
     @Override
