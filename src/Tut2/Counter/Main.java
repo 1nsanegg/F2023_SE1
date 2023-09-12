@@ -3,8 +3,13 @@ package Tut2.Counter;
 public class Main {
     public static void main(String[] args) {
         Counter counter = new Counter();
+<<<<<<< HEAD
         Counter2 counter2 = new Counter2();
         Counter3 counter3 = new Counter3(3);
+=======
+        Counter counter2 = new Counter2();
+        Counter counter3 = new Counter3(3);
+>>>>>>> origin/master
 
         System.out.println("This is counter");
         System.out.println("The value is " + counter.get());
